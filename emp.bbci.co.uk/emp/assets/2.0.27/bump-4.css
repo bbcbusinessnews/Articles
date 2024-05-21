@@ -1,0 +1,214 @@
+#p_settingsOverlay {
+    display: none;
+}
+
+#p_settingsOverlay.p_showing {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 15000;
+
+}
+
+html:not(.b-reith-sans-font) .p_playbackSettingsContainer {
+    font-family: helvetica, Arial, sans-serif;
+}
+
+.p_playbackSettingsContainer {
+    display: none;
+    background-color: #000;
+    color: #FFF;
+    z-index: 15001;
+    line-height: 1.2;
+}
+
+.p_playbackSettingsContainerInner {
+    position: relative;
+    overflow: hidden;
+}
+
+.p_playbackSettingsContainer.p_showing {
+    display: block;
+}
+
+.p_playbackSettingsContainer.p_panel {
+    position: absolute;
+    width: 256px;
+}
+
+.p_playbackSettingsContainer.p_bottomPanel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.p_playbackSettingsContainer .p_playbackSettingsHeading {
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 1.6em;
+    border-bottom: 1px solid #A4A4A4;
+}
+
+.p_playbackSettingsColumn {
+    max-width: 256px;
+    margin: 0 auto;
+}
+
+#p_autoplayToggle {
+    padding-top: 4px;
+    padding-bottom: 8px;
+}
+
+.p_playbackSettingsContainer_downArrow {
+    position: absolute;
+    bottom: -7px;
+    right: 18px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid #000;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+
+}
+
+#p_playbackSettingsContainer_startFocusPusher,
+#p_playbackSettingsContainer_endFocusPusher {
+    border: 1px solid #000;
+    background-color: #000;
+    color: #000;
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    width: 1px;
+}
+
+@media (-ms-high-contrast: active) {
+
+    .p_playbackSettingsContainer_downArrow {
+        -ms-high-contrast-adjust: none;
+        border-top-color: window;
+    }
+
+    #p_playbackSettingsContainer_startFocusPusher,
+    #p_playbackSettingsContainer_endFocusPusher {
+        border-color: window;
+    }
+
+    .nonPointerFocus #p_autoplayToggle:focus{
+        box-shadow: highlight 0px 0px 0px 3px inset !important;
+    }
+
+
+}
+
+/*
+ * Toggle Button
+ *
+ */
+
+.p_toggle_setting {
+    position: relative;
+    min-height: 46px;
+    padding: 2px 16px;
+    outline: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.p_toggleText {
+    margin-right: 45px;
+}
+
+.p_toggleHeading {
+    font-size: 1.4em;
+    padding-top: 9px;
+}
+
+.p_toggleSubheading {
+    font-size: 1.3em;
+    color: #A4A4A4;
+}
+
+.p_toggleSlot {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    box-sizing: border-box;
+
+    width: 40px;
+    height: 24px;
+    padding: 0;
+    border: 1px solid #A4A4A4;
+    margin: 0;
+    background-color: #A4A4A4;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+
+}
+
+.p_toggleOn .p_toggleSlot {
+    background-color: #000;
+    border-color: #fff;
+}
+
+.p_toggleSlider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    display: block;
+    width: 18px;
+    height: 18px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    background-color: #000;
+    -webkit-transition: left 200ms linear;
+    transition: left 200ms linear;
+}
+
+.p_toggleOn .p_toggleSlider {
+    left: 18px;
+    background-color: #FFF;
+}
+
+.p_toggleSlider .p_toggleTick {
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    height: 8px;
+    width: 3px;
+    border: solid #000;
+    border-width: 0px 2px 2px 0px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    opacity: 0;
+}
+
+.p_toggleOn .p_toggleSlider .p_toggleTick {
+    opacity: 1;
+}
+
+@media (-ms-high-contrast: active) {
+
+    .p_toggleSlider {
+        border: 1px solid windowText;
+        top: 1px;
+        left: 1px;
+    }
+
+    .p_toggleOn .p_toggleSlider {
+        left: 17px;
+    }
+
+}
